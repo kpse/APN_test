@@ -380,6 +380,7 @@
 				GCC_PREFIX_HEADER = "push/push-Prefix.pch";
 				INFOPLIST_FILE = "push/push-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f597e8af-0fbb-4ad5-9eb1-b925309bb7cf";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,6 +394,7 @@
 				GCC_PREFIX_HEADER = "push/push-Prefix.pch";
 				INFOPLIST_FILE = "push/push-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f597e8af-0fbb-4ad5-9eb1-b925309bb7cf";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
