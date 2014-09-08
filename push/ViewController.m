@@ -12,7 +12,10 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    BOOL _didSet;
+    UILabel* _label;
+}
 
 - (void)viewDidLoad
 {
@@ -20,10 +23,51 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loadView {
+    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.view.backgroundColor = [UIColor whiteColor];
+    _label = [[UILabel alloc] init];
+    _label.text = @"will show the push content here";
+    _label.textAlignment = UIBaselineAdjustmentAlignCenters;
+    [self.view addSubview:_label];
+//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    _label.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints {
+    [self setUpAutoLayout];
+    [super updateViewConstraints];
+}
+
+- (void)setUpAutoLayout {
+    if (_didSet) {
+        return;
+    }
+    _didSet = YES;
+
+    NSDictionary *views =
+        @{@"label1" : _label};
+
+    NSArray *layouts = @[@"|-15-[label1]-15-|", @"V:|-15-[label1]-15-|"];
+
+    [layouts enumerateObjectsUsingBlock:^(NSString *layout, NSUInteger idx, BOOL *stop) {
+        NSArray *constraint = [NSLayoutConstraint constraintsWithVisualFormat:layout
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:views];
+        [self.view addConstraints:constraint];
+    }];
+
+    NSArray *vLayouts = @[@"[label1(>=50)]", @"V:[label1(>=40)]"];
+    [vLayouts enumerateObjectsUsingBlock:^(NSString *layout, NSUInteger idx, BOOL *stop) {
+        NSArray *constraint = [NSLayoutConstraint constraintsWithVisualFormat:layout
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:views];
+        [_label addConstraints:constraint];
+    }];
+
 }
 
 @end
