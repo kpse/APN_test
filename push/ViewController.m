@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MyCache.h"
 
 @interface ViewController ()
 
@@ -27,7 +28,11 @@
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
     _label = [[UILabel alloc] init];
-    _label.text = @"will show the push content here";
+    NSDictionary * notification = [MyCache shared][@"notification"];
+    if (notification)
+        _label.text = [NSString stringWithFormat:@"%@", notification];
+    else
+        _label.text = @"will show the push content here";
     _label.textAlignment = UIBaselineAdjustmentAlignCenters;
     [self.view addSubview:_label];
 //    self.view.translatesAutoresizingMaskIntoConstraints = NO;

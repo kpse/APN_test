@@ -7,13 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "MyCache.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"%@", launchOptions);
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     // Override point for customization after application launch.
+    [MyCache shared][@"notification"] = launchOptions;
+    NSLog(@"%@", [MyCache shared][@"notification"]);
     return YES;
 }
 							
@@ -52,5 +56,7 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"push registration fail, the error is <%@>", error.localizedDescription);
 }
+
+
 
 @end

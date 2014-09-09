@@ -21,6 +21,7 @@
 		0542AA2119BD4FA1001180A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0542AA0319BD4FA1001180A7 /* UIKit.framework */; };
 		0542AA2919BD4FA1001180A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0542AA2719BD4FA1001180A7 /* InfoPlist.strings */; };
 		0542AA2B19BD4FA1001180A7 /* pushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542AA2A19BD4FA1001180A7 /* pushTests.m */; };
+		351C34037E3488B93C1E6A41 /* MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 351C3871D99E50B4E37B32F6 /* MyCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		0542AA2619BD4FA1001180A7 /* pushTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pushTests-Info.plist"; sourceTree = "<group>"; };
 		0542AA2819BD4FA1001180A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0542AA2A19BD4FA1001180A7 /* pushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pushTests.m; sourceTree = "<group>"; };
+		351C3871D99E50B4E37B32F6 /* MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCache.m; sourceTree = "<group>"; };
+		351C38B5F2A4904749D606D1 /* MyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCache.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 				0542AA1519BD4FA1001180A7 /* ViewController.m */,
 				0542AA1719BD4FA1001180A7 /* Images.xcassets */,
 				0542AA0619BD4FA1001180A7 /* Supporting Files */,
+				351C3C1721FDFF7F0B168CFF /* Model */,
 			);
 			path = push;
 			sourceTree = "<group>";
@@ -150,6 +154,15 @@
 				0542AA2719BD4FA1001180A7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		351C3C1721FDFF7F0B168CFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				351C38B5F2A4904749D606D1 /* MyCache.h */,
+				351C3871D99E50B4E37B32F6 /* MyCache.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 				0542AA1619BD4FA1001180A7 /* ViewController.m in Sources */,
 				0542AA1019BD4FA1001180A7 /* AppDelegate.m in Sources */,
 				0542AA0C19BD4FA1001180A7 /* main.m in Sources */,
+				351C34037E3488B93C1E6A41 /* MyCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
