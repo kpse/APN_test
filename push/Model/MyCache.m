@@ -12,11 +12,11 @@
 
 }
 
-static MyCache *_instance = NULL;
+static MyCache *_instance = nil;
 
 + (MyCache *)shared {
-    if (_instance) {
-        _instance = [MyCache new];
+    if (!_instance) {
+        _instance = [[MyCache alloc] init];
     }
     return _instance;
 }
@@ -24,7 +24,7 @@ static MyCache *_instance = NULL;
 - (id)init {
     self = [super init];
     if (self) {
-        _storage = [NSMutableDictionary new];
+        _storage = [[NSMutableDictionary alloc] init];
     }
 
     return self;

@@ -13,11 +13,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"%@", launchOptions);
+    NSLog(@"launchOptions is %@", launchOptions);
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     // Override point for customization after application launch.
-    [MyCache shared][@"notification"] = launchOptions;
-    NSLog(@"%@", [MyCache shared][@"notification"]);
+    if (launchOptions){
+        [MyCache shared][@"notification"] = [launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] mutableCopy];
+        NSLog(@"cache is %@", [MyCache shared][@"notification"]);
+    }
     return YES;
 }
 							

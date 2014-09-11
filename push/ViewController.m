@@ -34,8 +34,10 @@
     else
         _label.text = @"will show the push content here";
     _label.textAlignment = UIBaselineAdjustmentAlignCenters;
+    _label.lineBreakMode = NSLineBreakByWordWrapping;
+    _label.numberOfLines = 0;
+    [_label sizeToFit];
     [self.view addSubview:_label];
-//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
     _label.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view setNeedsUpdateConstraints];
 }
